@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CatatanController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/main', function () {
-    return view('layout.main');
+Route::get('/', function () {
+    return view('datacatatan');
 });
+Route::get('/catatan',[CatatanController::class,'index'])->name('catatan');
