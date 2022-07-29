@@ -15,10 +15,11 @@ class CreateCatatansTable extends Migration
     {
         Schema::create('catatans', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('tanggal');
-            $table->enum('waktu',['08.00','09.00','10.00','11.00','12.00']);
+            $table->date('tanggal');
+            $table->string('waktu');
             $table->string('lokasi');
-            $table->integer('suhutubuh');
+            $table->string('suhutubuh');
+            $table->timestamps();
         });
     }
 

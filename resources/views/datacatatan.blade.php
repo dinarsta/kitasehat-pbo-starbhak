@@ -13,31 +13,43 @@
     <title>catatan perjalanan</title>
   </head>
   <body>
-    <h1 class="text-center mt-3 mb-4">Catatan Perjalanan</h1>
-<div class="container">
-   <div class="row">
-     <table class="table table-striped table-hover">
-  <thead>
-    <tr>
-      <th scope="col">Tanggal</th>
-      <th scope="col">Waktu</th>
-      <th scope="col">Lokasi</th>
-      <th scope="col">Suhu TUbuh</th>
-      <th scope="col">Action</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    tr
-  </tbody>
-</table>
-   </div>
-</div>
+    <div class="page-header">
+              <h3 class="page-title"> Table </h3>
+              <nav aria-label="breadcrumb">
+              </nav>
+            </div>
+            <div class="row">
+              <div class="col-lg-12 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h1 class="text-center mt-3 mb-4">Catatan Perjalanan</h1>
+                    <a type="button" href="{{ route('tambahcatatan') }}" class="btn btn-secondary mb-3">Add +</a>
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th scope="col">ID</th>
+                          <th scope="col">Tanggal</th>
+                          <th scope="col">Waktu</th>
+                          <th scope="col">Lokasi</th>
+                          <th scope="col">Suhu Tubuh</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        @foreach ($data as $row)
+                          <tr>
+                            <th scope="row">{{$row->id}}</th>
+                            <td>{{$row->tanggal}}</td>
+                            <td>{{$row->waktu}}</td>
+                            <td>{{$row->lokasi}}</td>
+                            <td>{{$row->suhutubuh}}</td>
+                          </tr> 
+                        @endforeach
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
 
     <!-- Optional JavaScript; choose one of the two! -->
 

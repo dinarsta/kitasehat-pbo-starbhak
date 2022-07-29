@@ -50,7 +50,7 @@
                         <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-bs-toggle="dropdown"
                             aria-expanded="false">
                             <div class="nav-profile-img">
-                                <img src="/assets/images/faces/kita sehat.png" alt="image">
+                                <img style="width: 50px; height:50px;" src="/assets/images/faces/kita sehat.png" alt="image">
                                 <span class="availability-status online"></span>
                             </div>
                             <div class="nav-profile-text">
@@ -58,11 +58,8 @@
                                 <p class="mb-1 text-black">Admin</p>
                             </div>
                         </a>
-                    
-                    </li>
-                    
+                    </li> 
                 </ul>
-           
             </div>
         </nav>
         <!-- partial -->
@@ -73,7 +70,7 @@
                     <li class="nav-item nav-profile">
                         <a href="#" class="nav-link">
                             <div class="nav-profile-image">
-                                <img src="/assets/images/faces/kita sehat.png" alt="profile">
+                                <img style="width: 70px; height:70px; "src="/assets/images/faces/kita sehat.png" alt="profile">
                                 <span class="login-status online"></span>
                                 <!--change to offline or busy as needed-->
                             </div>
@@ -85,17 +82,20 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">
+                        <a class="nav-link" href="/main">
                             <span class="menu-title">Dashboard</span>
                             <i class="mdi mdi-home menu-icon"></i>
                         </a>
                     </li>
-                 
-            
-           
                     <li class="nav-item">
-                        <a class="nav-link" href="/datacatatan">
-                            <span class="menu-title">Tables</span>
+                        <a class="nav-link" href="/catatan">
+                            <span class="menu-title">Catatan Perjalanan</span>
+                            <i class="mdi mdi-table-large menu-icon"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/tambahcatatan">
+                            <span class="menu-title">Isi Data</span>
                             <i class="mdi mdi-table-large menu-icon"></i>
                         </a>
                     </li>
@@ -104,21 +104,16 @@
                             aria-controls="general-pages">
                             <span class="menu-title">Activity</span>
                             <i class="menu-arrow"></i>
-                            <i class="mdi mdi-medical-bag menu-icon"></i>
                         </a>
                         <div class="collapse" id="general-pages">
                             <ul class="nav flex-column sub-menu">
-                               
                                 <li class="nav-item"> <a class="nav-link" href="/assets/pages/samples/login.html"> Login </a>
                                 </li>
-                                <li class="nav-item"> <a class="nav-link" href="/assets/pages/samples/register.html"> Register
-                                    </a></li>
+                                <li class="nav-item"> <a class="nav-link" href="/assets/pages/samples/register.html"> Register</a>
+                                </li>
+                                <li class="nav-item"> <a class="nav-link" href="/assets/pages/samples/register.html"> Logout</a>
+                                </li>
                               </li>
-
-                                     <li class="nav-item"> <a class="nav-link" href="/assets/pages/samples/register.html"> Logout
-                                    </a></li>
-                              </li>
-
                             </ul>
                         </div>
                     </li>
@@ -131,16 +126,6 @@
                     @yield('content')
                 </div>
                 <!-- content-wrapper ends -->
-                <!-- partial:partials/_footer.html -->
-                <footer class="footer">
-                    <div class="container-fluid d-flex justify-content-between">
-                        <span class="text-muted d-block text-center text-sm-start d-sm-inline-block">Copyright ©
-                            bootstrapdash.com 2021</span>
-                        <span class="float-none float-sm-end mt-1 mt-sm-0 text-end"> Free <a
-                                href="https://www.bootstrapdash.com/bootstrap-admin-template/" target="_blank">Bootstrap
-                                admin template</a> from Bootstrapdash.com</span>
-                    </div>
-                </footer>
                 <!-- partial -->
             </div>
             <!-- main-panel ends -->

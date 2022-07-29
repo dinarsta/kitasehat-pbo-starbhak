@@ -13,8 +13,12 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('datacatatan');
+Route::get('/main', function () {
+    return view('layout.main');
 });
+
 Route::get('/catatan',[CatatanController::class,'index'])->name('catatan');
+
+Route::get('/tambahcatatan', [CatatanController::class, 'tambahcatatan'])->name('tambahcatatan');
+
+Route::post('/insertdata', [CatatanController::class, 'insertdata'])->name('insertdata');
