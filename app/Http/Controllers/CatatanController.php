@@ -26,7 +26,7 @@ class CatatanController extends Controller{
             'suhutubuh' => $request->suhutubuh,
         ]);
 
-    return redirect()->route('catatan');    
+    return redirect()->route('datacatatan');    
     }
    }
  

@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\CatatanController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\CatatanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,12 +14,18 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/main', function () {
-    return view('layout.main');
+Route::get('/dashboard', function () {
+    return view('dashboard');
 });
 
-Route::get('/catatan',[CatatanController::class,'index'])->name('catatan');
+Route::get('/datacatatan',[CatatanController::class,'index'])->name('datacatatan');
 
 Route::get('/tambahcatatan', [CatatanController::class, 'tambahcatatan'])->name('tambahcatatan');
 
 Route::post('/insertdata', [CatatanController::class, 'insertdata'])->name('insertdata');
+
+Route::get('/login', [LoginController::class, 'login'])->name('login');
+
+Route::get('/register', [LoginController::class, 'register'])->name('register');
+Route::post('/registeruser', [LoginController::class, 'registeruser'])->name('registeruser');
+Route::post('/logout', [LoginController::class, 'logout']);

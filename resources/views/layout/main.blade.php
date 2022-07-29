@@ -54,10 +54,13 @@
                                 <span class="availability-status online"></span>
                             </div>
                             <div class="nav-profile-text">
-                              <h5>Kita sehat</h5>
-                                <p class="mb-1 text-black">Admin</p>
+                                <h6 class="mt-3 text-black">Admin</h6>
                             </div>
                         </a>
+                        <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
+                            <a class="dropdown-item" href="/logout">
+                              <i class="mdi mdi-logout me-2 text-primary"></i> Logout </a>
+                        </div>
                     </li> 
                 </ul>
             </div>
@@ -70,25 +73,25 @@
                     <li class="nav-item nav-profile">
                         <a href="#" class="nav-link">
                             <div class="nav-profile-image">
-                                <img style="width: 70px; height:70px; "src="/assets/images/faces/kita sehat.png" alt="profile">
+                                <img style="width: 70px; height:70px; margin-top:-10px; "src="/assets/images/faces/kita sehat.png" alt="profile">
                                 <span class="login-status online"></span>
                                 <!--change to offline or busy as needed-->
                             </div>
                             <div class="nav-profile-text d-flex flex-column">
-                                <span class="font-weight-bold mb-2">Kita Sehat</span>
-                                <span class="text-secondary text-small">Admin</span>
+                                <span class="font-weight-bold mb-2 ms-3">Kita Sehat</span>
+                                <span class="text-secondary text-small ms-3">Admin</span>
                             </div>
                             <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/main">
+                        <a class="nav-link" href="/dashboard">
                             <span class="menu-title">Dashboard</span>
                             <i class="mdi mdi-home menu-icon"></i>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/catatan">
+                        <a class="nav-link" href="/datacatatan">
                             <span class="menu-title">Catatan Perjalanan</span>
                             <i class="mdi mdi-table-large menu-icon"></i>
                         </a>
@@ -96,7 +99,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/tambahcatatan">
                             <span class="menu-title">Isi Data</span>
-                            <i class="mdi mdi-table-large menu-icon"></i>
+                            <i class="mdi mdi-border-color menu-icon"></i>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -107,13 +110,10 @@
                         </a>
                         <div class="collapse" id="general-pages">
                             <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"> <a class="nav-link" href="/assets/pages/samples/login.html"> Login </a>
+                                <li class="nav-item"> <a class="nav-link" href="/login"> Login </a>
                                 </li>
-                                <li class="nav-item"> <a class="nav-link" href="/assets/pages/samples/register.html"> Register</a>
+                                <li class="nav-item"> <a class="nav-link" href="/register"> Register</a>
                                 </li>
-                                <li class="nav-item"> <a class="nav-link" href="/assets/pages/samples/register.html"> Logout</a>
-                                </li>
-                              </li>
                             </ul>
                         </div>
                     </li>
