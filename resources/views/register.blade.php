@@ -27,6 +27,7 @@
               <div class="auth-form-light text-left p-5">
                 <div class="brand-logo">
                   <img src="../../assets/images/kita sehat.png">
+                  <h4>Kita Sehat</h4>
                 </div>
                 <h4>New here?</h4>
                 <h6 class="font-weight-light">Signing up is easy. It only takes a few steps</h6>

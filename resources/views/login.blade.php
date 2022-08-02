@@ -27,7 +27,7 @@
               <div class="auth-form-light text-left p-5">
                 <div class="brand-logo">
                   <img src="../assets/images/kita sehat.png" class="w-50 h-50">
-                  {{-- <h1>Kita Sehat</h1> --}}
+                  <h4>Kita Sehat</h4>
                 </div>
                 <h4>Hello! let's get started</h4>
                 <h6 class="font-weight-light">Sign in to continue.</h6>
