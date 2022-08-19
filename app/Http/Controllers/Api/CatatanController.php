@@ -45,8 +45,9 @@ class CatatanController extends Controller
 
         //return response
         return new CatatanResource(true, 'Data Post Berhasil Ditambahkan!', $catatan);
+
     }
-    public function show(Post $post)
+    public function show(Post $catatan)
     {
         //return single post as a resource
         return new CatatanResource(true, 'Data Post Ditemukan!', $catatan);
@@ -71,10 +72,10 @@ class CatatanController extends Controller
         return new CatatanResource(true, 'Data Post Berhasil Diubah!', $catatan);
     }
 
-    public function destroy(Post $post)
+    public function destroy(Post $catatan)
     {
         //delete image
-        Storage::delete('public/catatans/'.$post->image);
+        Storage::delete('public/catatans/'.$catatan->image);
 
         //delete post
         $catatan->delete();
