@@ -14,10 +14,10 @@ class CatatanController extends Controller
     public function index()
     {
         //get posts
-        $posts = Catatan::latest()->paginate(5);
+        $catatan = Catatan::latest()->paginate(5);
 
         //return collection of posts as a resource
-        return new CatatanResource(true, 'List Data Catatan', $posts);
+        return new CatatanResource(true, 'List Data Catatan', $catatan);
     }
     public function store(Request $request)
     {
@@ -36,7 +36,7 @@ class CatatanController extends Controller
 
 
         //create post
-        $post = Catatan::create([
+        $catatan = Catatan::create([
             'tanggal'     => $request->tanggal,
             'waktu'   => $request->waktu,
             'lokasi'     => $request->lokasi,
@@ -44,6 +44,42 @@ class CatatanController extends Controller
         ]);
 
         //return response
-        return new CatatanResource(true, 'Data Post Berhasil Ditambahkan!', $post);
+        return new CatatanResource(true, 'Data Post Berhasil Ditambahkan!', $catatan);
+    }
+    public function show(Post $post)
+    {
+        //return single post as a resource
+        return new CatatanResource(true, 'Data Post Ditemukan!', $catatan);
+    }
+
+    public function update(Request $request, Post $catatan)
+    {
+        //define validation rules
+        $validator = Validator::make($request->all(), [
+            'tanggal'     => 'required',
+            'waktu'     => 'required',
+            'lokasi'   => 'required',
+            'suhutubuh'   => 'required',
+        ]);
+
+        //check if validation fails
+        if ($validator->fails()) {
+            return response()->json($validator->errors(), 422);
+        }
+
+        //return response
+        return new CatatanResource(true, 'Data Post Berhasil Diubah!', $catatan);
+    }
+
+    public function destroy(Post $post)
+    {
+        //delete image
+        Storage::delete('public/catatans/'.$post->image);
+
+        //delete post
+        $catatan->delete();
+
+        //return response
+        return new CatatanResource(true, 'Data Post Berhasil Dihapus!', null);
     }
 }
