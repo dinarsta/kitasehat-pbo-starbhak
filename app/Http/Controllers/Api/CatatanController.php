@@ -45,5 +45,42 @@ class CatatanController extends Controller
 
         //return response
         return new CatatanResource(true, 'Data Post Berhasil Ditambahkan!', $catatan);
+
+    }
+    public function show(Post $catatan)
+    {
+        //return single post as a resource
+        return new CatatanResource(true, 'Data Post Ditemukan!', $catatan);
+    }
+
+    public function update(Request $request, Post $catatan)
+    {
+        //define validation rules
+        $validator = Validator::make($request->all(), [
+            'tanggal'     => 'required',
+            'waktu'     => 'required',
+            'lokasi'   => 'required',
+            'suhutubuh'   => 'required',
+        ]);
+
+        //check if validation fails
+        if ($validator->fails()) {
+            return response()->json($validator->errors(), 422);
+        }
+
+        //return response
+        return new CatatanResource(true, 'Data Post Berhasil Diubah!', $catatan);
+    }
+
+    public function destroy(Post $catatan)
+    {
+        //delete image
+        Storage::delete('public/catatans/'.$catatan->image);
+
+        //delete post
+        $catatan->delete();
+
+        //return response
+        return new CatatanResource(true, 'Data Post Berhasil Dihapus!', null);
     }
 }
