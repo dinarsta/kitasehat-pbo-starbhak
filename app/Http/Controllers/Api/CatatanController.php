@@ -14,10 +14,10 @@ class CatatanController extends Controller
     public function index()
     {
         //get posts
-        $posts = Catatan::latest()->paginate(5);
+        $catatan = Catatan::latest()->paginate(5);
 
         //return collection of posts as a resource
-        return new CatatanResource(true, 'List Data Catatan', $posts);
+        return new CatatanResource(true, 'List Data Catatan', $catatan);
     }
     public function store(Request $request)
     {
@@ -36,7 +36,7 @@ class CatatanController extends Controller
 
 
         //create post
-        $post = Catatan::create([
+        $catatan = Catatan::create([
             'tanggal'     => $request->tanggal,
             'waktu'   => $request->waktu,
             'lokasi'     => $request->lokasi,
@@ -44,6 +44,6 @@ class CatatanController extends Controller
         ]);
 
         //return response
-        return new CatatanResource(true, 'Data Post Berhasil Ditambahkan!', $post);
+        return new CatatanResource(true, 'Data Post Berhasil Ditambahkan!', $catatan);
     }
 }
