@@ -34,7 +34,6 @@ class CatatanController extends Controller
             return response()->json($validator->errors(), 422);
         }
 
-
         //create post
         $catatan = Catatan::create([
             'tanggal'     => $request->tanggal,
@@ -44,16 +43,14 @@ class CatatanController extends Controller
         ]);
 
         //return response
-        return new CatatanResource(true, 'Data Post Berhasil Ditambahkan!', $catatan);
-
+        return new CatatanResource(true, 'Data Catatan Berhasil Ditambahkan!', $catatan);
     }
-    public function show(Post $catatan)
+    public function show(Catatan $catatan)
     {
         //return single post as a resource
-        return new CatatanResource(true, 'Data Post Ditemukan!', $catatan);
+        return new CatatanResource(true, 'Data catatan Ditemukan!', $catatan);
     }
-
-    public function update(Request $request, Post $catatan)
+    public function update(Request $request, catatan $catatan)
     {
         //define validation rules
         $validator = Validator::make($request->all(), [
@@ -68,19 +65,37 @@ class CatatanController extends Controller
             return response()->json($validator->errors(), 422);
         }
 
+        //check if image is not empty
+        if ($request->hasFile('image')) {
+
+            //update post with new image
+            $catatan->update([
+                'tanggal'     => $request->tanggal,
+                'waktu'   => $request->waktu,
+                'lokasi'     => $request->lokasi,
+                'suhutubuh'   => $request->suhutubuh,
+            ]);
+        } else {
+
+            //update post without image
+            $catatan->update([
+                'tanggal'     => $request->tanggal,
+                'waktu'   => $request->waktu,
+                'lokasi'     => $request->lokasi,
+                'suhutubuh'   => $request->suhutubuh,
+            ]);
+        }
+
         //return response
         return new CatatanResource(true, 'Data Post Berhasil Diubah!', $catatan);
     }
-
-    public function destroy(Post $catatan)
+    public function destroy(Catatan $catatan)
     {
-        //delete image
-        Storage::delete('public/catatans/'.$catatan->image);
 
         //delete post
         $catatan->delete();
 
         //return response
-        return new CatatanResource(true, 'Data Post Berhasil Dihapus!', null);
+        return new CatatanResource(true, 'Data Catatan Berhasil Dihapus!', null);
     }
 }

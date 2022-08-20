@@ -10,7 +10,6 @@ class catatan extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'nama',
         'tanggal',
         'waktu',
         'lokasi',
